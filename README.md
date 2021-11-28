@@ -22,17 +22,17 @@
 
 ### 方法二
 > 1. 在src下创建代理配置文件setupProxy.js
-  2. 编写setupProxy.js配置文件
-    ```js
-    const proxy = require(http-proxy-middleware);
-    module.exports = function(app){
-       app.use('/api1',{
-          target:'http://localhost:5000',
-          changeOrigin:true,
-          pathRewrite:{'^/api1', ''}
-       });
-    }
-  ```
-   说明：
-     1. 优点：可以同时配置多个代理，可灵活控制请求是否走代理
-     2. 缺点：配置比较繁琐，前段请求资源时必须加前缀
+> 2. 编写setupProxy.js配置文件
+> ```js
+>   const proxy = require(http-proxy-middleware);
+>   module.exports = function(app){
+>     app.use('/api1',{
+>        target:'http://localhost:5000',
+>        changeOrigin:true,
+>        pathRewrite:{'^/api1', ''}
+>     });
+>   }
+> ```
+>   说明：
+>    1. 优点：可以同时配置多个代理，可灵活控制请求是否走代理
+>    2. 缺点：配置比较繁琐，前段请求资源时必须加前缀
