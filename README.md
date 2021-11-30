@@ -36,3 +36,9 @@
 >   说明：
 >    1. 优点：可以同时配置多个代理，可灵活控制请求是否走代理
 >    2. 缺点：配置比较繁琐，前段请求资源时必须加前缀
+
+## 消息订阅与发布机制完成任意组件间的数据传递
+   - npm install pubsub-js
+   - 数据接收组件订阅消息 subscribe('messageId', (_, message) => {})
+   - 数据发送方发送消息  publish('messageId', message)
+> [pubsub-js地址](https://github.com/mroderick/PubSubJS)
