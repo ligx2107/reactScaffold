@@ -50,7 +50,14 @@
        >>  <Demo />
        >> ```
 
-     > 路由组件：<Route path="/xxxx" component={Demo} />  v6: <Route path="/xxxxx" element={<Demo />}/>
+     > 路由组件：
+       >> ```js
+       >>  <Route path="/xxxx" component={Demo} />  
+       >> ```
+       >> v6: 
+       >> ```js
+       >>  <Route path="/xxxxx" element={<Demo />}/>
+       >> ```
    - 存放的位置不同：
      > 一般组件：components文件夹下
 
@@ -65,10 +72,12 @@
              goForward:
              push:
              replace:
+
        >> location:
              pathname:
              search:
              state:
+             
        >> match:
              params:
              path:
