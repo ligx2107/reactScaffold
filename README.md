@@ -42,3 +42,31 @@
    - 数据接收组件订阅消息 subscribe('messageId', (_, message) => {})
    - 数据发送方发送消息  publish('messageId', message)
 > [pubsub-js地址](https://github.com/mroderick/PubSubJS)
+
+## 路由组件与一般组件的区别
+   - 写法不同：
+     > 一般组件: <Demo />
+
+     > 路由组件：<Route path="/xxxx" component={Demo} />  v6: <Route path="/xxxxx" element={<Demo />}/>
+   - 存放的位置不同：
+     > 一般组件：components文件夹下
+
+     > 路由组件：pages文件夹下
+   - 接收到的props不同：
+     > 一般组建：写组件标签时传递什么，props就能接受到什么
+     
+     > 路由组件：可接收到三个固定的属性
+       >> history:
+             go:
+             goBack:
+             goForward:
+             push:
+             replace:
+       >> location:
+             pathname:
+             search:
+             state:
+       >> match:
+             params:
+             path:
+             url:       
