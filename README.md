@@ -45,7 +45,10 @@
 
 ## 路由组件与一般组件的区别
    - 写法不同：
-     > 一般组件: <Demo />
+     > 一般组件: 
+       >> ```js
+       >>  <Demo />
+       >> ```
 
      > 路由组件：<Route path="/xxxx" component={Demo} />  v6: <Route path="/xxxxx" element={<Demo />}/>
    - 存放的位置不同：
