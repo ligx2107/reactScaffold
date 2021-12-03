@@ -32,11 +32,11 @@ export default class App extends Component {
                     <div className="col-xs-6">
                         <div className="panel">
                             <div className="panel-body">
-                                {/* 注册路由 react-router-dom v6版本新语法，使用element指定具体的组件*/}
-                                <Routes>
-                                    <Route path="/about" element={<About />} />
-                                    <Route path="/home" element={<Home />} />
-                                </Routes>
+                                {/* 注册路由 
+                                    Switch: 当有相同path的路由注册时，可阻断相同path路由的重复匹配
+                                */}
+                                <Route path="/about" component={About} />
+                                <Route path="/home" component={Home} />
                             </div>
                         </div>
                     </div>
