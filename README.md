@@ -82,3 +82,13 @@
              params:
              path:
              url:       
+
+## 解决多级路径刷新页面样式丢失问题
+   - public/index.html中引入样式时使用 **/** 来代替 **./** 相对路径方式
+   - public/index.html中引入样式时使用 **%PUBLIC_URL%** 代替 **/** 方式
+   - 使用HashRouter代替BrowserRouter
+
+## 路由的匹配模式
+   - 默认情况下使用的是模糊匹配，输入的路径要包含注册的路径且需要顺序一致
+   - 开启精准匹配模式: <Route>标签中使用 **exact** 或 **exact={true}** 标识
+   - 精准匹配模式不随意开启，可能会导致无法匹配二级路径
