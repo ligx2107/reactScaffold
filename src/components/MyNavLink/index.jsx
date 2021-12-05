@@ -11,7 +11,7 @@ export default class MyNavLink extends Component {
                     故：可通过props对象解构的方式将调用此标签时的标签属性和标签体内容同时进行处理
                     TODO --- activeClassName不起效果
                  */}
-                <NavLink activeClassName="nav" className="list-group-item" {...this.props} />
+                <NavLink activeClassName="nav_test" className="list-group-item" {...this.props} />
             </div>
         );
     }
