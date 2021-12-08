@@ -60,11 +60,9 @@
        >> ```
    - 存放的位置不同：
      > 一般组件：components文件夹下
-
      > 路由组件：pages文件夹下
    - 接收到的props不同：
      > 一般组建：写组件标签时传递什么，props就能接受到什么
-     
      > 路由组件：可接收到三个固定的属性
        >> history:
              go:
@@ -72,12 +70,10 @@
              goForward:
              push:
              replace:
-
        >> location:
              pathname:
              search:
              state:
-             
        >> match:
              params:
              path:
@@ -99,3 +95,32 @@
 ## 嵌套路由
    - 注册子路由时，要写上父路由的path值
    - 路由的匹配是按照注册顺序进行的，逐级进行匹配
+
+## 向路由组件传递参数
+   - params参数
+     > params参数在地址栏内可见
+     > 路由注册时需声明所能接受的参数：
+       >> ```js
+       >> <Route path="/home/message/detail/:id/:title" component={Detail}/>
+       >> ```
+     > Link组件设定路由时需在路由路径上明确指定所传递的参数
+       >> ```js
+       >>  <Link to='/home/message/detail/tom/test'>测试</Link>
+       >> ```
+     > 路由组件接收params参数：this.props.match.params
+   - search参数
+     > search参数在地址栏内可见
+     > 路由注册时无需声明接收参数
+     > Link组件设定路由时需要在路由路径上明确指定所传递的参数
+       >> ```js
+       >>  <Link to='/home/message/detail/?name=tom&title=test'>测试</Link>
+       >> ```
+     > 路由组件接收search参数：this.props.location.search，接收到的search是urlencoded编码字符串，需通过querystring类库进行解析
+   - state参数
+     > state参数在地址栏中不可见
+     > 路由注册时无需声明接受参数
+     > Link组件设定路由时需通过对象类型参数，指定路由地址及所要传递的参数
+       >> ```js
+       >>  <Link to={{pathname: '/home/message/detail', state: {name: 'tom', title: 'test'}}}>测试</Link>
+       >> ```
+     > 页面刷新时，参数可保留
