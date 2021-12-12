@@ -123,4 +123,17 @@
        >> ```js
        >>  <Link to={{pathname: '/home/message/detail', state: {name: 'tom', title: 'test'}}}>测试</Link>
        >> ```
-     > 页面刷新时，参数可保留
+     > 路由组件接收state参数：this.props.location.state, 页面刷新时，参数可保留
+## 路由跳转的两种模式
+   - push模式(默认): 会将所有点击过的路由压入history栈内
+   - replace模式: 需在<Link>标签内使用 **replace** 或 **replace={true}** 开启, 开启后，所点击的路由会替换history栈顶记录
+
+## 编程式路由导航
+   - 借助this.props.history对象上的API完成路由跳转
+     > this.props.history.push()
+     > this.props.history.replace()
+     > this.props.history.goBack()
+     > this.props.history.goForward()
+     > this.props.history.go()
+
+## withRouter  一个加工一般组件的函数，可以让一般组件具有路由组件的所有API
