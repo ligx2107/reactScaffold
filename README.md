@@ -137,3 +137,17 @@
      > this.props.history.go()
 
 ## withRouter  一个加工一般组件的函数，可以让一般组件具有路由组件的所有API
+
+## BrowserRouter与HashRouter之间的区别
+   - 底层原理不同：
+      > BrowserRouter使用的是H5dehistory API，不兼容IE9及以下版本的浏览器
+      > HashRouter使用的是URL的哈希值
+   - path表现形式不同：
+      > BrowserRouter的路径中没有#
+      > HashRouter的路径中有#
+   - 刷新后对路由state参数的影响：
+      > BrowserRouter没有影响
+      > HashRouter刷新后会导致路由 **state参数丢失** 
+   - 其他：
+      > HashRouter可以用于解决一些路径错误的相关问题，例如：css样式丢失问题
+      
