@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 //引入store
 import store from '../../redux/store';
 
+import {createIncrementAction, createDecrementAction} from '../../redux/countAction';
+
 export default class Counter extends Component {
 
     componentDidMount() {
@@ -17,7 +19,8 @@ export default class Counter extends Component {
         //获取选择的值
         const {value} = this.selectValue;
         //通知store
-        store.dispatch({type:'increment', data: value * 1});
+        // store.dispatch({type:'increment', data: value * 1});
+        store.dispatch(createIncrementAction(value * 1));
     }
 
     //减
@@ -25,7 +28,8 @@ export default class Counter extends Component {
         //获取选择的值
         const {value} = this.selectValue;
         //通知store
-        store.dispatch({type:'decrement', data: value * 1});
+        // store.dispatch({type:'decrement', data: value * 1});
+        store.dispatch(createDecrementAction(value * 1));
     }
 
     //奇数加
@@ -35,7 +39,7 @@ export default class Counter extends Component {
         const count = store.getState();
         if(count % 2 !==0){
             //通知store
-            store.dispatch({type:'increment', data: value * 1});
+            store.dispatch(createIncrementAction(value * 1));
         }
     }
 
