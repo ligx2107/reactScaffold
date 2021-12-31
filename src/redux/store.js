@@ -3,7 +3,7 @@
  */
 
 //引入createStore，用于创建redux中最为核心的store对象
-//引入applyMiddleware，用于使用redux-thunka
+//引入applyMiddleware，用于使用redux-thunk
 import {createStore, applyMiddleware} from 'redux';
 //引入为Counter组件服务的reducer
 import countReducer from './countReducer';
