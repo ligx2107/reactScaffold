@@ -4,7 +4,7 @@
  * 异步action：action的值为函数
  */
 //引入定义的常量
-import {INCREMENT, DECREMENT} from './constant';
+import {INCREMENT, DECREMENT} from '../constant';
 
 //创建加操作的action对象
 export const createIncrementAction = data => ({type:INCREMENT, data});
