@@ -161,3 +161,5 @@
       - 安装serve：npm install serve -g
       - 部署并运行打包后的程序：serve build (注：build为打包程序所在路径)
       
+## setState
+   - setState本身是个同步方法，程序主线程调用setState通知react更新状态，react更新状态的动作是异步执行的，即：程序通知和真正执行之间是异步的
