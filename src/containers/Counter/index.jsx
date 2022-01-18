@@ -11,7 +11,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 //引入actions
-import {createIncrementAction, createDecrementAction, createIncrementAsyncAction} from '../../redux/actions/count';
+import {increment, decrement, incrementAsync} from '../../redux/actions/count';
 
 // 定义UI组件，UI组件中不使用任何redux的api，只做展示
 class Counter extends Component {
@@ -75,11 +75,11 @@ const mapDispatchToProps = dispatch => (
     {
         increment: number => {
             //通知redux执行加法
-            dispatch(createIncrementAction(number))
+            dispatch(increment(number))
         },
-        decrement: number => dispatch(createDecrementAction(number)),
+        decrement: number => dispatch(decrement(number)),
         incrementAsync: (number, time) => {
-            dispatch(createIncrementAsyncAction(number, time))
+            dispatch(incrementAsync(number, time))
         }
     }
 )
@@ -99,8 +99,8 @@ const mapDispatchToProps = dispatch => (
 export default connect(
     state => ({count:state.counter, persons: state.persons}), 
     {
-        increment:createIncrementAction,
-        decrement:createDecrementAction,
-        incrementAsync:createIncrementAsyncAction
+        increment,
+        decrement,
+        incrementAsync
     }
  )(Counter);

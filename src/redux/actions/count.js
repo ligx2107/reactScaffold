@@ -7,16 +7,16 @@
 import {INCREMENT, DECREMENT} from '../constant';
 
 //创建加操作的action对象
-export const createIncrementAction = data => ({type:INCREMENT, data});
+export const increment = data => ({type:INCREMENT, data});
 //创建减操作的action对象
-export const createDecrementAction = data => ({type:DECREMENT, data});
+export const decrement = data => ({type:DECREMENT, data});
 
 //创建异步操作action对象，异步action中一般都会调用同步action
-export const createIncrementAsyncAction = (data, time) => {
+export const incrementAsync = (data, time) => {
     return (dispatch) => {
         setTimeout(() => {
             //通知redux计算
-            dispatch(createIncrementAction(data));
+            dispatch(increment(data));
         }, time);
     }
 }

@@ -150,4 +150,14 @@
       > HashRouter刷新后会导致路由 **state参数丢失** 
    - 其他：
       > HashRouter可以用于解决一些路径错误的相关问题，例如：css样式丢失问题
+
+## redux开发工具
+   - 安装：npm install redux-devtools-extension
+   - 使用：store中引入composeWithDevTools且作为createStore方法调用的第二个参数
+
+## 打包及本地部署运行
+   - 打包：npm run build
+   - 部署：
+      - 安装serve：npm install serve -g
+      - 部署并运行打包后的程序：serve build (注：build为打包程序所在路径)
       
