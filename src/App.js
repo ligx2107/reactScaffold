@@ -4,6 +4,7 @@ import SetStateDemo from './components/setState';
 import LazyLoadDemo from './components/lazyLoad';
 import HookDemo from './components/hooks';
 import FragmentDemo from './components/fragment';
+import ContextDemo from './components/context';
 
 export default class App extends Component {
     render() {
@@ -12,7 +13,8 @@ export default class App extends Component {
                 {/* <SetStateDemo p={2}/> */}
                 {/* <LazyLoadDemo /> */}
                 {/* <HookDemo /> */}
-                <FragmentDemo />
+                {/* <FragmentDemo /> */}
+                <ContextDemo />
             </div>
         )
     }
