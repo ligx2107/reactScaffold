@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 
-import Demo from './components/setStateDemo';
+import SetStateDemo from './components/setState';
+import LazyLoadDemo from './components/lazyLoad';
 
 export default class App extends Component {
     render() {
         return (
             <div>
-                <Demo p={2}/>
+                {/* <SetStateDemo p={2}/> */}
+                <LazyLoadDemo />
             </div>
         )
     }

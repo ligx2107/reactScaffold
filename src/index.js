@@ -6,7 +6,11 @@ import ReactDOM from 'react-dom';
 //引入组件
 import App from './App';
 
+import {BrowserRouter} from 'react-router-dom';
+
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
     document.getElementById('root')
  );
