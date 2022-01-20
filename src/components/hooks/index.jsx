@@ -49,7 +49,7 @@ class Demo extends Component {
 function Demo() {
     
     // 通过调用React.useState, 使得函数式组件可以使用状态数据
-    // React.useState(initState)方法入餐为状态初始值，返回值为一个数组，第一个元素为状态值，第二个元素为操作状态的方法
+    // React.useState(initState)方法入参为状态初始值，返回值为一个数组，第一个元素为状态值，第二个元素为操作状态的方法
     const [number, setNumber] = React.useState(0);
 
     // 通过调用React.useEffect函数模拟生命周期钩子

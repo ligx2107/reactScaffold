@@ -163,3 +163,11 @@
       
 ## setState
    - setState本身是个同步方法，程序主线程调用setState通知react更新状态，react更新状态的动作是异步执行的，即：程序通知和真正执行之间是异步的
+   - setState的两种形式:
+      - 对象式setState(stateObj,[callback]): 
+         - 使用场景：状态变更不依赖于原始状态
+         - callback回调执行: react完成状态的变更同时页面重新渲染(调用render)后，调用此回调函数
+      - 函数式setState((state, props) => {}, [callback]):
+         - 使用场景：状态变更依赖于原始状态
+         - 状态变更函数：接收两个参数，原始state及调用组件传递参数props，返回state的变更结果
+         - callback回调函数：同对象式setState
