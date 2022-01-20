@@ -171,3 +171,9 @@
          - 使用场景：状态变更依赖于原始状态
          - 状态变更函数：接收两个参数，原始state及调用组件传递参数props，返回state的变更结果
          - callback回调函数：同对象式setState
+
+## lazyLoad延迟加载
+   - 常用于路由组件，实现按需加载
+   - 具体实现：
+      1. 通过react的lazy函数，实现路由组件的懒加载
+      2. 通过react的Suspense包裹路由组件的注册，同时指定fallback
