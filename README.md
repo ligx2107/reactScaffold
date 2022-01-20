@@ -186,7 +186,7 @@
          - useState返回值为数组形式[state, setState], state为状态数据，setState为设置状态值的方法
    - ref hooks:
       - 调用React.useRef()来模拟类式组件的容器化ref
-   - life cycle hooks:
+   - Effect hooks:
       - 调用React.useEffect(effectCallback, [dependencyList])，模拟类式组件生命周期钩子
          - 必选effectCallback，此回调函数所返回的函数，可模拟componentWillUnmount钩子
          - 可选dependencyList, 状态列表，为null时表示监听所有状态的变化，即effectCallback模拟了componentDidMount + componentDidUpdate两个钩子；为[]时表示不监听任何状态变化，即effectCallback模拟了componentDidMount钩子

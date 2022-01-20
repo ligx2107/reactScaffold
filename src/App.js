@@ -6,6 +6,7 @@ import HookDemo from './components/hooks';
 import FragmentDemo from './components/fragment';
 import ContextDemo from './components/context';
 import OptimizeDemo from './components/optimize';
+import RenderPropsDemo from './components/renderProps';
 
 export default class App extends Component {
     render() {
@@ -15,8 +16,9 @@ export default class App extends Component {
                 {/* <LazyLoadDemo /> */}
                 {/* <HookDemo /> */}
                 {/* <FragmentDemo /> */}
-                <ContextDemo />
+                {/* <ContextDemo /> */}
                 {/* <OptimizeDemo /> */}
+                <RenderPropsDemo />
             </div>
         )
     }
