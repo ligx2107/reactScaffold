@@ -61,9 +61,7 @@ function Grandson(){
                     Consumer内部为一个函数，入参即为传递过来的参数信息 */}
                 <Consumer>
                     {
-                        value => {
-                            return `${value.userName}, 年龄：${value.age}`;
-                        }
+                        value => `${value.userName}, 年龄：${value.age}`
                     }
                 </Consumer>
             </h3>

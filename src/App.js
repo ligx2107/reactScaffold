@@ -15,8 +15,8 @@ export default class App extends Component {
                 {/* <LazyLoadDemo /> */}
                 {/* <HookDemo /> */}
                 {/* <FragmentDemo /> */}
-                {/* <ContextDemo /> */}
-                <OptimizeDemo />
+                <ContextDemo />
+                {/* <OptimizeDemo /> */}
             </div>
         )
     }

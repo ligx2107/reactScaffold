@@ -190,3 +190,45 @@
       - 调用React.useEffect(effectCallback, [dependencyList])，模拟类式组件生命周期钩子
          - 必选effectCallback，此回调函数所返回的函数，可模拟componentWillUnmount钩子
          - 可选dependencyList, 状态列表，为null时表示监听所有状态的变化，即effectCallback模拟了componentDidMount + componentDidUpdate两个钩子；为[]时表示不监听任何状态变化，即effectCallback模拟了componentDidMount钩子
+
+## 继承Component实现类式组件的低效问题
+   - 原因：Component中的shouldComponentUpdate钩子默认情况下总是返回true
+      - 只要调用setState()，即使状态没有发生变化，组件也会重新render
+      - 只要当前组件重新render，则会自动重新render子组件
+   - 高效处理方式：
+      - 只有state状态发生变化时，才重新render当前组件
+      - 只有props传递的参数发生变化时，才重新render子组件
+   - 解决方案：
+      - 手动重写shouldComponentUpdate钩子，判断state和props是否发生变化，如变化则返回true，否则返回false
+      - 类式组件继承PureComponent，而不再直接继承Component
+         - PureComponent实现了一个**state和props的浅比较** ，只有当state和props发生变化时才会重新render
+
+## Context
+   - 一种组件间的通信方式，常用于祖组件与后辈组件间的通信
+   - 具体实现：
+      1. 调用React.createContext()创建context对象
+         ```js
+         const MyContext = React.createContext();
+         ```
+      2. 组件通过Provider向后辈组件传递数据
+         ```js
+         <MyContext.Provider value={}>
+            <Child />
+         </MyContext.Provider>
+         ```
+      3. 后辈组件接收数据
+         - 类式组件：
+            1. 声明接收context
+            ```js
+            static contextType = MyContext;
+            ```
+            2. 通过类式组件实例对象的context属性获取参数
+         - 函数式组件：
+            1. 通过<Consumer></Consumer>方式接收数据, 此方式在类式组件中同样适用
+            ```js
+            <Consumer>
+               {
+                  value => {return `名字: ${value.userName}, 年龄: ${value.age}`}
+               }
+            </Consumer>
+            ```
