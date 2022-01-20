@@ -177,3 +177,16 @@
    - 具体实现：
       1. 通过react的lazy函数，实现路由组件的懒加载
       2. 通过react的Suspense包裹路由组件的注册，同时指定fallback
+
+## hooks
+   - 使得函数式组件获得类式组件state、ref及生命周期钩子操作的能力
+   - state hooks:
+      - 调用React.useState(initState)，使得函数式组件可以获得并修改状态数据
+         - initState: 状态数据初始值
+         - useState返回值为数组形式[state, setState], state为状态数据，setState为设置状态值的方法
+   - ref hooks:
+      - 调用React.useRef()来模拟类式组件的容器化ref
+   - life cycle hooks:
+      - 调用React.useEffect(effectCallback, [dependencyList])，模拟类式组件生命周期钩子
+         - 必选effectCallback，此回调函数所返回的函数，可模拟componentWillUnmount钩子
+         - 可选dependencyList, 状态列表，为null时表示监听所有状态的变化，即effectCallback模拟了componentDidMount + componentDidUpdate两个钩子；为[]时表示不监听任何状态变化，即effectCallback模拟了componentDidMount钩子
