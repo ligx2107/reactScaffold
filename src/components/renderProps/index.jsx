@@ -14,18 +14,22 @@ class Parent extends Component {
                 </A>
                 */}
 
-                {/* 通过children props方式构建父子组件关系， 
+                {/* 通过children props方式构建父子组件关系，父组件无法向子组件传递数据
                 <A>
                     <B />
                 </A>
                 */}
-                {/* 通过render props方式向子组件传递数据 */}
+                {/* 通过render props方式向子组件传递数据，父组件可以向子组件传递数据 */}
+                <A render={(name)=><B p={name} />}/>
             </div>
         );
     }
 }
 
 class A extends Component {
+
+    state = {name:'tom'}
+
     render() {
         return (
             <div className='a'>
@@ -37,6 +41,9 @@ class A extends Component {
                 {/* 通过children props方式构建的父子关系，使用this.props.children调用子组件 
                 {this.props.children}
                 */}
+
+                {/* 通过render prpos方式构建的父子关系，使用this.props.render()调用子组件 */}
+                {this.props.render(this.state.name)}
             </div>
         );
     }
@@ -47,6 +54,7 @@ class B extends Component {
         return (
             <div className='b'>
                 <h2>我是B组件</h2>
+                <h3>A组件传递的数据: {this.props.p}</h3>
             </div>
         );
     }
