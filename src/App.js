@@ -7,6 +7,7 @@ import FragmentDemo from './components/fragment';
 import ContextDemo from './components/context';
 import OptimizeDemo from './components/optimize';
 import RenderPropsDemo from './components/renderProps';
+import ErrorBoundaryDemo from './components/errorBoundary/Parent';
 
 export default class App extends Component {
     render() {
@@ -18,7 +19,8 @@ export default class App extends Component {
                 {/* <FragmentDemo /> */}
                 {/* <ContextDemo /> */}
                 {/* <OptimizeDemo /> */}
-                <RenderPropsDemo />
+                {/* <RenderPropsDemo /> */}
+                <ErrorBoundaryDemo />
             </div>
         )
     }

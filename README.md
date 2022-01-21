@@ -247,3 +247,18 @@
       <!-- 父组件内调用子组件 -->
       {this.props.render('Tom')}
       ```
+
+## 异常边界(error boundary)
+   - 用来捕获后代组件错误，渲染出备用页面
+   - 借助getDerivedStateFromError(error)及componentDidCatch(error, errorInfo)两个钩子函数实现
+
+## 组件间通信方式
+   - 组件间关系
+      - 父子组件
+      - 兄弟组件(非嵌套组件)
+      - 祖孙组件(跨级嵌套组件)
+   - 集中通信方式
+      - props方式: children props和render props
+      - 消息发布-订阅: pub-sub
+      - 集中管理: redux
+      - 生产消费: context
