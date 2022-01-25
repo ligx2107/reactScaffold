@@ -9,6 +9,7 @@ import OptimizeDemo from './components/optimize';
 import RenderPropsDemo from './components/renderProps';
 import ErrorBoundaryDemo from './components/errorBoundary/Parent';
 import MemoDemo from './components/memo';
+import ForwardRefDemo from './components/forwardRef';
 
 export default class App extends Component {
     render() {
@@ -22,7 +23,8 @@ export default class App extends Component {
                 {/* <OptimizeDemo /> */}
                 {/* <RenderPropsDemo /> */}
                 {/* <ErrorBoundaryDemo /> */}
-                <MemoDemo />
+                {/* <MemoDemo /> */}
+                <ForwardRefDemo />
             </div>
         )
     }
