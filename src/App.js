@@ -8,6 +8,7 @@ import ContextDemo from './components/context';
 import OptimizeDemo from './components/optimize';
 import RenderPropsDemo from './components/renderProps';
 import ErrorBoundaryDemo from './components/errorBoundary/Parent';
+import MemoDemo from './components/memo';
 
 export default class App extends Component {
     render() {
@@ -20,7 +21,8 @@ export default class App extends Component {
                 {/* <ContextDemo /> */}
                 {/* <OptimizeDemo /> */}
                 {/* <RenderPropsDemo /> */}
-                <ErrorBoundaryDemo />
+                {/* <ErrorBoundaryDemo /> */}
+                <MemoDemo />
             </div>
         )
     }

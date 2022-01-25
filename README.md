@@ -202,6 +202,12 @@
       - 手动重写shouldComponentUpdate钩子，判断state和props是否发生变化，如变化则返回true，否则返回false
       - 类式组件继承PureComponent，而不再直接继承Component
          - PureComponent实现了一个**state和props的浅比较** ，只有当state和props发生变化时才会重新render
+      - 通过memo高阶函数，通过props的变化决定组件是否重新渲染(等价于在组件外部实现shouldComponentUpdate钩子，只拦截props)
+         - 与PureComponent方式的不同
+            - PureComponent方式，是针对**state和props的比较**，组件需继承PureComponent，适用于类组件
+            - memo为高阶函数，只针对**props的比较**， 适用于函数组件和类组件
+         - 具体实现
+            - memo高阶函数接收两个参数，第一个参数为原始组件，可以是函数组件，也可以是类组件，第二个参数为props比较器函数，返回**true时，不重新渲染原始组件，返回false时，重新渲染**
 
 ## Context
    - 一种组件间的通信方式，常用于祖组件与后辈组件间的通信
