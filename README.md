@@ -65,19 +65,19 @@
       - 一般组建：写组件标签时传递什么，props就能接受到什么
       - 路由组件：可接收到三个固定的属性
          - history:
-             go:
-             goBack:
-             goForward:
-             push:
-             replace:
+             1. go:
+             2. goBack:
+             3. goForward:
+             4. push:
+             5. replace:
          - location:
-             pathname:
-             search:
-             state:
+             1. pathname:
+             2. search:
+             3. state:
          - match:
-             params:
-             path:
-             url:       
+             1. params:
+             2. path:
+             3. url:       
 
 ## 解决多级路径刷新页面样式丢失问题
    - public/index.html中引入样式时使用 **/** 来代替 **./** 相对路径方式
@@ -98,58 +98,58 @@
 
 ## 向路由组件传递参数
    - params参数
-     > params参数在地址栏内可见
-     > 路由注册时需声明所能接受的参数：
-       >> ```js
-       >> <Route path="/home/message/detail/:id/:title" component={Detail}/>
-       >> ```
-     > Link组件设定路由时需在路由路径上明确指定所传递的参数
-       >> ```js
-       >>  <Link to='/home/message/detail/tom/test'>测试</Link>
-       >> ```
-     > 路由组件接收params参数：this.props.match.params
+      - params参数在地址栏内可见
+      - 路由注册时需声明所能接受的参数：
+         ```js
+         <Route path="/home/message/detail/:id/:title" component={Detail}/>
+         ```
+      - Link组件设定路由时需在路由路径上明确指定所传递的参数
+         ```js
+         <Link to='/home/message/detail/tom/test'>测试</Link>
+         ```
+      - 路由组件接收params参数：this.props.match.params
    - search参数
-     > search参数在地址栏内可见
-     > 路由注册时无需声明接收参数
-     > Link组件设定路由时需要在路由路径上明确指定所传递的参数
-       >> ```js
-       >>  <Link to='/home/message/detail/?name=tom&title=test'>测试</Link>
-       >> ```
-     > 路由组件接收search参数：this.props.location.search，接收到的search是urlencoded编码字符串，需通过querystring类库进行解析
+      - search参数在地址栏内可见
+      - 路由注册时无需声明接收参数
+      - Link组件设定路由时需要在路由路径上明确指定所传递的参数
+         ```js
+         <Link to='/home/message/detail/?name=tom&title=test'>测试</Link>
+         ```
+      - 路由组件接收search参数：this.props.location.search，接收到的search是urlencoded编码字符串，需通过querystring类库进行解析
    - state参数
-     > state参数在地址栏中不可见
-     > 路由注册时无需声明接受参数
-     > Link组件设定路由时需通过对象类型参数，指定路由地址及所要传递的参数
-       >> ```js
-       >>  <Link to={{pathname: '/home/message/detail', state: {name: 'tom', title: 'test'}}}>测试</Link>
-       >> ```
-     > 路由组件接收state参数：this.props.location.state, 页面刷新时，参数可保留
+      - state参数在地址栏中不可见
+      - 路由注册时无需声明接受参数
+      - Link组件设定路由时需通过对象类型参数，指定路由地址及所要传递的参数
+         ```js
+         <Link to={{pathname: '/home/message/detail', state: {name: 'tom', title: 'test'}}}>测试</Link>
+         ```
+      - 路由组件接收state参数：this.props.location.state, 页面刷新时，参数可保留
 ## 路由跳转的两种模式
    - push模式(默认): 会将所有点击过的路由压入history栈内
    - replace模式: 需在<Link>标签内使用 **replace** 或 **replace={true}** 开启, 开启后，所点击的路由会替换history栈顶记录
 
 ## 编程式路由导航
    - 借助this.props.history对象上的API完成路由跳转
-     > this.props.history.push()
-     > this.props.history.replace()
-     > this.props.history.goBack()
-     > this.props.history.goForward()
-     > this.props.history.go()
+      1. this.props.history.push()
+      2. this.props.history.replace()
+      3. this.props.history.goBack()
+      4. this.props.history.goForward()
+      5. this.props.history.go()
 
 ## withRouter  一个加工一般组件的函数，可以让一般组件具有路由组件的所有API
 
 ## BrowserRouter与HashRouter之间的区别
    - 底层原理不同：
-      > BrowserRouter使用的是H5dehistory API，不兼容IE9及以下版本的浏览器
-      > HashRouter使用的是URL的哈希值
+      1. BrowserRouter使用的是H5的history API，不兼容IE9及以下版本的浏览器
+      2. HashRouter使用的是URL的哈希值
    - path表现形式不同：
-      > BrowserRouter的路径中没有#
-      > HashRouter的路径中有#
+      1. BrowserRouter的路径中没有#
+      2. HashRouter的路径中有#
    - 刷新后对路由state参数的影响：
-      > BrowserRouter没有影响
-      > HashRouter刷新后会导致路由 **state参数丢失** 
+      1. BrowserRouter没有影响
+      2. HashRouter刷新后会导致路由 **state参数丢失** 
    - 其他：
-      > HashRouter可以用于解决一些路径错误的相关问题，例如：css样式丢失问题
+      1. HashRouter可以用于解决一些路径错误的相关问题，例如：css样式丢失问题
 
 ## redux开发工具
    - 安装：npm install redux-devtools-extension
