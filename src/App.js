@@ -10,6 +10,7 @@ import RenderPropsDemo from './components/renderProps';
 import ErrorBoundaryDemo from './components/errorBoundary/Parent';
 import MemoDemo from './components/memo';
 import ForwardRefDemo from './components/forwardRef';
+import HOCDemo from './components/forwardRef/hoc';
 
 export default class App extends Component {
     render() {
@@ -24,7 +25,8 @@ export default class App extends Component {
                 {/* <RenderPropsDemo /> */}
                 {/* <ErrorBoundaryDemo /> */}
                 {/* <MemoDemo /> */}
-                <ForwardRefDemo />
+                {/* <ForwardRefDemo /> */}
+                <HOCDemo />
             </div>
         )
     }

@@ -265,3 +265,8 @@
       - 消息发布-订阅: pub-sub
       - 集中管理: redux
       - 生产消费: context
+
+## React.forwardRef使用
+   - 解决问题
+      - 组件间转发ref，react本身不允许通过props传递ref
+      - HOC(高阶组件)转发ref

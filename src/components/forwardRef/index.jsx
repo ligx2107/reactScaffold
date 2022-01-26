@@ -23,6 +23,7 @@ class Father extends Component {
     }
 }
 
+// 通过forwardRef，自定义属性转发ref到目标组件上
 const NewFather = React.forwardRef((props, ref) => <Father grandRef={ref} {...props}/>);
 
 export default class GrandFather extends Component {
