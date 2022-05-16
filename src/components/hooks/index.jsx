@@ -53,7 +53,7 @@ function Demo() {
     const [number, setNumber] = React.useState(0);
 
     // 通过调用React.useEffect函数模拟生命周期钩子
-    // React.useEffect函数接收两个参数，第一个参数为一个回调函数(返回的函数相当于ComponentWillUnmount)，第二个参数为一个被监听状态的数组，当第二个参数为空时，则表示监听所有状态变化(ComponentDidMount + ComponentDidUpdate)，为空数组时表示不监听任务状态变化(ComponentDidMount)
+    // React.useEffect函数接收两个参数，第一个参数为一个回调函数(返回的函数相当于ComponentWillUnmount)，第二个参数为一个被监听状态的数组，当第二个参数为空时，则表示监听所有状态变化(ComponentDidMount + ComponentDidUpdate)，为空数组时表示不监听任何状态变化(ComponentDidMount)
     React.useEffect(() => {
         let timer = setInterval(() => {
             setNumber(number => number + 1);
