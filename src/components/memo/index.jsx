@@ -10,7 +10,7 @@ class TextMemo extends Component {
 }
 
 /**
- * memo(preComponent, propsAreEqual): 高阶函数，接收原始组件及props比较器函数，根据props的变化决定是否重新渲染原始组件
+ * memo(preComponent, propsAreEqual): 高阶函数，接收原始组件及props比较器函数，根据props的变化决定是否重新渲染原始组件(比较函数返回false则重新渲染，返回true则不做重新渲染)
  */
 const NewTextMemo = memo(TextMemo, (pre, next) => {
     if(pre.number === next.number){
