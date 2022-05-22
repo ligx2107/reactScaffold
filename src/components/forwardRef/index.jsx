@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, forwardRef } from 'react';
 
 class Son extends Component {
     render(){
@@ -24,12 +24,18 @@ class Father extends Component {
 }
 
 // 通过forwardRef，自定义属性转发ref到目标组件上
-const NewFather = React.forwardRef((props, ref) => <Father grandRef={ref} {...props}/>);
+const NewFather = forwardRef((props, ref) => <Son grandRef={ref} {...props}/>);
 
 export default class GrandFather extends Component {
 
+    // 展示输入框内数据
     show = () => {
         console.log(this.node.value);
+    }
+
+    // 清空输入框内数据
+    clearValue = () => {
+        this.node.value = '';
     }
 
     render() {
@@ -37,6 +43,7 @@ export default class GrandFather extends Component {
             <div>
                 <NewFather ref={(node)=>{this.node = node}}/>
                 <button onClick={this.show}>点击展示</button>
+                <button onClick={this.clearValue}>点击清空</button>
             </div>
         );
     }
