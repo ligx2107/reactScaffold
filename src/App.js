@@ -22,11 +22,11 @@ export default class App extends Component {
                 {/* <FragmentDemo /> */}
                 {/* <ContextDemo /> */}
                 {/* <OptimizeDemo /> */}
-                {/* <RenderPropsDemo /> */}
+                <RenderPropsDemo />
                 {/* <ErrorBoundaryDemo /> */}
                 {/* <MemoDemo /> */}
                 {/* <ForwardRefDemo /> */}
-                <HOCDemo />
+                {/* <HOCDemo /> */}
             </div>
         )
     }
