@@ -11,6 +11,7 @@ import ErrorBoundaryDemo from './components/errorBoundary/Parent';
 import MemoDemo from './components/memo';
 import ForwardRefDemo from './components/forwardRef';
 import HOCDemo from './components/forwardRef/hoc';
+import ExtendDemo from './components/forwardRef/extendstest';
 
 export default class App extends Component {
     render() {
@@ -22,11 +23,12 @@ export default class App extends Component {
                 {/* <FragmentDemo /> */}
                 {/* <ContextDemo /> */}
                 {/* <OptimizeDemo /> */}
-                <RenderPropsDemo />
+                {/* <RenderPropsDemo /> */}
                 {/* <ErrorBoundaryDemo /> */}
                 {/* <MemoDemo /> */}
                 {/* <ForwardRefDemo /> */}
                 {/* <HOCDemo /> */}
+                <ExtendDemo />
             </div>
         )
     }
