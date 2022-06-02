@@ -13,6 +13,7 @@ import ForwardRefDemo from './components/forwardRef';
 import HOCDemo from './components/hocs/hoc';
 import ExtendDemo from './components/forwardRef/extendstest';
 import HOCDemo2 from './components/hocs/lifecyclefunctionhandler';
+import EnhanceHOC, {FC} from './components/hocs/enhanceProps';
 
 export default class App extends Component {
     render() {
@@ -30,7 +31,9 @@ export default class App extends Component {
                 {/* <ForwardRefDemo /> */}
                 {/* <HOCDemo /> */}
                 {/* <ExtendDemo /> */}
-                <HOCDemo2 />
+                {/* <HOCDemo2 /> */}
+                <EnhanceHOC/>
+                <FC />
             </div>
         )
     }
