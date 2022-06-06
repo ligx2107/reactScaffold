@@ -14,6 +14,7 @@ import HOCDemo from './components/hocs/hoc';
 import ExtendDemo from './components/forwardRef/extendstest';
 import HOCDemo2 from './components/hocs/lifecyclefunctionhandler';
 import EnhanceHOC, {FC} from './components/hocs/enhanceProps';
+import UserReducerDemo from './components/usereducer';
 
 export default class App extends Component {
     render() {
@@ -32,8 +33,9 @@ export default class App extends Component {
                 {/* <HOCDemo /> */}
                 {/* <ExtendDemo /> */}
                 {/* <HOCDemo2 /> */}
-                <EnhanceHOC/>
-                <FC />
+                {/* <EnhanceHOC/> */}
+                {/* <FC /> */}
+                <UserReducerDemo />
             </div>
         )
     }
