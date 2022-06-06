@@ -24,6 +24,7 @@ class Father extends Component {
 }
 
 // 通过forwardRef，自定义属性转发ref到目标组件上
+// forwardRef会创建一个组件，这个组件可以将其接收的ref属性转发到其组件树下的另一个组件中
 const NewFather = forwardRef((props, ref) => <Son grandRef={ref} {...props}/>);
 
 export default class GrandFather extends Component {
