@@ -86,7 +86,7 @@ const mapDispatchToProps = dispatch => (
 
 /**
  * 使用connect创建并暴露一个容器组件
- * 1. 调用connect方法参数为两个函数，分别传递状态state已经操作状态的具体方法
+ * 1. 调用connect方法参数为两个函数，分别传递状态state以及操作状态的具体方法
  * 2. 调用connect方法的返回值方法传递一个参数，即UI组件
  * */
 // export default connect(mapStateToProps,mapDispatchToProps)(CounterUI);
