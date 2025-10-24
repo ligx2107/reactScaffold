@@ -6,6 +6,7 @@ class Son extends Component {
             <Fragment>
                 <div>
                     <h2>孙组件</h2>
+                    <h3>接收到的属性：{this.props.name}</h3>
                     <input type="text" ref={this.props.grandRef}/>
                 </div>
             </Fragment>
@@ -42,7 +43,7 @@ export default class GrandFather extends Component {
     render() {
         return (
             <div>
-                <NewFather ref={(node)=>{this.node = node}}/>
+                <NewFather ref={(node)=>{this.node = node}} name="test"/>
                 <button onClick={this.show}>点击展示</button>
                 <button onClick={this.clearValue}>点击清空</button>
             </div>
